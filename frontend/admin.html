@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+  <header>
+    <h1>🎬 Admin Panel - Manage Movies</h1>
+  </header>
+
+  <main>
+    <section class="add-movie">
+      <h2>Add Movie</h2>
+      <form id="add-movie-form">
+        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="genre" placeholder="Genre" required />
+        <input type="number" id="release_year" placeholder="Release Year" required />
+        <input type="text" id="director" placeholder="Director" required />
+        <button type="submit">➕ Add Movie</button>
+      </form>
+    </section>
+
+    <section class="movie-list">
+      <h2>Movie List</h2>
+      <ul id="movies-container"></ul>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

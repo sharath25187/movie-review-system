@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - Movie Review System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Movie Review System</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Movies</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div id="movie-details" class="movie-details">
+                <!-- Movie details will be loaded here -->
+                <div class="loading">Loading movie details...</div>
+            </div>
+            
+            <div class="reviews-section">
+                <h3>Reviews</h3>
+                <div id="reviews" class="reviews-list">
+                    <!-- Reviews will be loaded here -->
+                </div>
+                
+                <div class="review-form-container">
+                    <h3>Add Your Review</h3>
+                    <form id="review-form">
+                        <div class="form-group">
+                            <label for="review_text">Your Review:</label>
+                            <textarea id="review_text" name="review_text" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="rating">Rating (1-5):</label>
+                            <select id="rating" name="rating" required>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Good</option>
+                                <option value="4">4 - Very Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Movie Review System</p>
+        </footer>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

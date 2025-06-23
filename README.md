@@ -21,7 +21,7 @@ A web-based movie review platform where users can view and review movies. Built 
 ![Home Page](screenshots/home.png)
 
 ### 🛠️ Admin Panel
-![Admin Panel](screenshots/admin.png)
+![Admin Panel](screenshots/admin-panel.png)
 
 ## 🛠️ How to Run Locally
 

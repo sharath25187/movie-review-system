@@ -23,7 +23,7 @@ async function fetchMovies() {
                 const halfStar = avg % 1 >= 0.5 ? 1 : 0;        // e.g., 0.7 → 1
                 const emptyStars = 5 - fullStars - halfStar;
             
-                return '★'.repeat(fullStars) + '½'.repeat(halfStar) + '☆'.repeat(emptyStars);
+                return '★'.repeat(fullStars) + '⯨'.repeat(halfStar) + '☆'.repeat(emptyStars);
             }
             
             const rating = movie.average_rating !== null

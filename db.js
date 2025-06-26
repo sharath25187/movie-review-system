@@ -1,16 +1,18 @@
 const mysql = require('mysql2');
 const fs = require('fs');
+require('dotenv').config();
+
 
 const db = mysql.createConnection({
-  host: 'movie-reviews-sharath25187-324e.c.aivencloud.com',
-  user: 'avnadmin',
-  password: 'AVNS_Y6e8jfi0QywHYnDZU-P',
-  database: 'defaultdb',
-  port: 27952,
-  ssl: {
-    ca: fs.readFileSync('./ca.pem')
-  }
-});
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    ssl: {
+      ca: fs.readFileSync('./ca.pem')
+    }
+  });
+  
 
 db.connect(err => {
   if (err) {

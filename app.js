@@ -4,6 +4,12 @@ const app = express();
 const PORT = 3000;
 const db = require('./db'); // MySQL connection
 
+const path = require('path');
+
+// Serve static files from frontend folder
+app.use(express.static(path.join(__dirname, 'frontend')));
+
+
 app.use(cors({
     origin: 'http://127.0.0.1:5500',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -31,6 +37,11 @@ console.log('Registering movie routes...');
 const movieRoutes = require('./routes/movies');
 app.use('/movies', movieRoutes); // Use authenticateToken if needed
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
@@ -50,5 +61,5 @@ app.use((req, res, next) => {
         }
     }
     next();
-});
+});    
 

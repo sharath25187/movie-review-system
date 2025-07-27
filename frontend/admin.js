@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function fetchMovies() {
         try {
-            const response = await fetch('http://localhost:3000/movies');
+            const response = await fetch('/movies');  // ✅ changed
             const movies = await response.json();
 
             moviesContainer.innerHTML = '';
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.deleteMovie = async function (id) {
         if (!confirm('Are you sure you want to delete this movie?')) return;
         try {
-            const response = await fetch(`http://localhost:3000/movies/${id}`, {
+            const response = await fetch(`/movies/${id}`, {  // ✅ changed
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/movies', {
+            const response = await fetch('/movies', {  // ✅ changed
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

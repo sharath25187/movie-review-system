@@ -18,7 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function fetchMovies() {
         try {
-            const response = await fetch('https://your-backend.onrender.com/movies');  // ✅ changed
+            const response = await fetch('/movies', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
             const movies = await response.json();
 
             moviesContainer.innerHTML = '';
@@ -38,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.deleteMovie = async function (id) {
         if (!confirm('Are you sure you want to delete this movie?')) return;
         try {
-            const response = await fetch(`https://your-backend.onrender.com/movies/${id}`, {  // ✅ changed
+            const response = await fetch(`/movies/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -67,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         try {
-            const response = await fetch('https://your-backend.onrender.com/movies', {  // ✅ changed
+            const response = await fetch('/movies', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

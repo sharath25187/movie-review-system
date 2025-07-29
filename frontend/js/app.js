@@ -3,7 +3,7 @@
 // Fetch movies from the backend
 async function fetchMovies() {
     try {
-        const response = await fetch('http://localhost:3000/movies');
+        const response = await fetch('/movies');
         const movies = await response.json();
         const movieList = document.getElementById('movie-list');
         
@@ -56,7 +56,7 @@ async function fetchMovieDetails() {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/movies/${movieId}`);
+        const response = await fetch(`/movies/${movieId}`);
         const movie = await response.json();
         const movieDetails = document.getElementById('movie-details');
 
@@ -70,7 +70,7 @@ async function fetchMovieDetails() {
         `;
 
         // Fetch reviews for the movie
-        const reviewsResponse = await fetch(`http://localhost:3000/movies/${movieId}/reviews`);
+        const reviewsResponse = await fetch(`/movies/${movieId}/reviews`);
         const reviews = await reviewsResponse.json();
         const reviewsContainer = document.getElementById('reviews');
 
@@ -126,7 +126,7 @@ async function submitReview(event) {
         const tokenData = JSON.parse(atob(token.split('.')[1]));
         const userId = tokenData.userId;
 
-        const response = await fetch(`http://localhost:3000/movies/${movieId}/reviews`, {
+        const response = await fetch(`/movies/${movieId}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
